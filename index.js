@@ -19,7 +19,7 @@ em.textContent = traveler.nickname;
 const ul = document.querySelector('div.traveler ul#animals');
 traveler.animalSightings.forEach(function(animal) {
     const li = document.createElement('li');
-    li.id = animal.id;
+    li.dataset.id = animal.id;
     const p = document.createElement('p');
     p.textContent = animal.description;
     const img = document.createElement('img');
@@ -33,6 +33,7 @@ traveler.animalSightings.forEach(function(animal) {
 });
 
 /***** Deliverable 5 *****/
-// const li = ul.querySelector('li#3');
-const li = ul.querySelectorAll('li');
-li[2].remove();
+const li = ul.querySelector(`[data-id='3']`);
+li.remove();
+// const li = ul.querySelectorAll('li');
+// li[2].remove();
